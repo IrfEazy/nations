@@ -202,5 +202,39 @@
     },
     "production": 6,
     "science": 5
+  },
+  {
+    "aggressive": 7,
+    "civilopediaText": [
+      {
+        "text": "Isabella I, Queen of Castile and León, was known for her sponsorship of Christopher Columbus and her completion of the Reconquista with the conquest of Granada. She and her husband Ferdinand laid the foundations for the unification of Spain."
+      }
+    ],
+    "commerce": 5,
+    "culture": 6,
+    "declareWar": 6,
+    "diplomacy": 4,
+    "expansion": 8,
+    "faith": 9,
+    "food": 5,
+    "gold": 6,
+    "happiness": 5,
+    "loyal": 7,
+    "military": 7,
+    "name": "Isabella I",
+    "priorities": {
+      "Autocracy": 5,
+      "Commerce": 5,
+      "Freedom": 4,
+      "Honor": 7,
+      "Liberty": 5,
+      "Order": 5,
+      "Patronage": 4,
+      "Piety": 9,
+      "Rationalism": 4,
+      "Tradition": 7
+    },
+    "production": 5,
+    "science": 4
   }
 ]

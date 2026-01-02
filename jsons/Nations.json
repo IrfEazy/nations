@@ -355,8 +355,67 @@
     "tradeRequest": "A fair proposal, consistent with our laws.",
     "uniqueName": "Kanuni",
     "uniques": [
-      "[+1 Happiness] from [Courthouse]",
+      "[+1 Happiness] from every [Courthouse]",
       "[-20]% maintenance costs <for [All] units>"
+    ]
+  },
+  {
+    "adjective": ["Castilian"],
+    "attacked": "You dare challenge the Kingdom founded by God?",
+    "cities": [
+      "Toledo",
+      "Valladolid",
+      "Burgos",
+      "Salamanca",
+      "Segovia",
+      "Ávila",
+      "León",
+      "Madrid",
+      "Córdoba",
+      "Sevilla",
+      "Granada",
+      "Murcia",
+      "Jaén",
+      "Santander",
+      "Palencia",
+      "Soria",
+      "Zamora",
+      "Cuenca",
+      "Guadalajara",
+      "Almería"
+    ],
+    "declaringWar": "For faith and for the Crown, we shall reclaim what is ours!",
+    "defeated": "The body may fall, but the soul remains...",
+    "favoredReligion": "Christianity",
+    "hateHello": "Make it brief.",
+    "innerColor": [255, 215, 0],
+    "introduction": "I am Isabella, Queen of Castile and León. We strive to unify the lands and the faith. Do you walk with God?",
+    "leaderName": "Isabella I",
+    "name": "Crown of Castile",
+    "neutralHello": "God be with you.",
+    "outerColor": [139, 0, 0],
+    "personality": "Isabella I",
+    "preferredVictoryType": "Domination",
+    "spyNames": [
+      "Gonzalo",
+      "Cisneros",
+      "Torquemada",
+      "Beatriz",
+      "Juana",
+      "Ferdinand",
+      "Colon",
+      "Mendoza",
+      "Ponce",
+      "Alba"
+    ],
+    "startBias": ["Plains"],
+    "startIntroPart1": "Isabella, Queen of Castile, your piety and resolve have united a fractured land. Through marriage and conquest, you have laid the foundation for a global empire.",
+    "startIntroPart2": "The Reconquista is complete, but the world is vast. Will you carry the banner of Castile to the ends of the earth? Will your new empire shine through the ages of history?",
+    "tradeRequest": "A mutually beneficial arrangement, supervised by grace.",
+    "uniqueName": "Reconquista",
+    "uniques": [
+      "[+20]% Strength <when fighting in [Enemy Land] tiles>",
+      "[+1 Faith] [in all cities]"
     ]
   }
 ]

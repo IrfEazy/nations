@@ -99,5 +99,24 @@
     "uniqueTo": "Ottoman Empire",
     "unitType": "Gunpowder",
     "upgradesTo": "Rifleman"
+  },
+  {
+    "attackSound": "horse",
+    "cost": 120,
+    "movement": 4,
+    "name": "Hidalgos",
+    "obsoleteTech": "Military Science",
+    "replaces": "Knight",
+    "requiredResource": "Horses",
+    "requiredTech": "Chivalry",
+    "strength": 20,
+    "uniques": [
+      "[+33]% Strength <vs cities>",
+      "Can move after attacking",
+      "[+15]% Strength <when fighting in [Hill] tiles>"
+    ],
+    "uniqueTo": "Crown of Castile",
+    "unitType": "Mounted",
+    "upgradesTo": "Cavalry"
   }
 ]

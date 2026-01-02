@@ -66,5 +66,16 @@
     "requiredTech": "Theology",
     "uniques": ["[+25]% Great Person generation [in this city]", "[+1 Happiness]"],
     "uniqueTo": "Ottoman Empire"
+  },
+  {
+    "cityHealth": 25,
+    "cityStrength": 7,
+    "cost": 170,
+    "maintenance": 1,
+    "name": "Alcázar",
+    "replaces": "Castle",
+    "requiredTech": "Chivalry",
+    "uniques": ["[+2 Faith]", "[+2 Culture]"],
+    "uniqueTo": "Crown of Castile"
   }
 ]
