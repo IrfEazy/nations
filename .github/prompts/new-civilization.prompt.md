@@ -95,7 +95,12 @@ After all files are modified:
 1. Verify JSON syntax is valid (no trailing commas, proper brackets)
 2. Verify all cross-references match: `uniqueTo` ↔ `name`, `personality` ↔ Personalities entry
 3. Verify uniques use valid Unciv syntax from the knowledge base
-4. Verify the new nation is balanced relative to existing ones
+4. **Verify filter parameters**: Check all `[tileFilter]`, `[buildingFilter]`, and `[terrainFilter]` values in uniques against the filter parameter reference in copilot-instructions.md:
+   - Safe keyword constants (e.g., `Friendly Land`, `Rough terrain`, `Culture`) → ✅ always valid
+   - Base-game object names (e.g., `Hill`, `Coast`, `Courthouse`) → ⚠️ valid at runtime but trigger standalone warnings (suppressed by ModOptions.json)
+   - Unrecognized values → ❌ probable error
+5. Verify `jsons/ModOptions.json` exists and contains the warning suppression unique
+6. Verify the new nation is balanced relative to existing ones
 
 ### Phase 9: Summary
 Present a summary to the user:

@@ -38,12 +38,26 @@ A civilization design brief containing the unique unit concept (name, replaces, 
 - `No defensive terrain bonus`
 - `[+N]% Strength <when defending>`
 - `[+N]% Strength <vs cities>`
-- `[+N]% Strength <when fighting in [terrainFilter] tiles>` (Hill, Forest, Plains, etc.)
+- `[+N]% Strength <when fighting in [tileFilter] tiles>`
 - `Heals [N] damage if it kills a unit`
 - `Withdraws before melee combat <with [N]% chance>`
 - `[-N] Range`
 - `[+N]% Strength <when fighting in [Friendly Land/Enemy Land] tiles>`
 - `Earn [N]% of killed [unitFilter] unit's [Strength] as [Gold]`
+
+#### tileFilter Values for Unit Conditionals
+The `<when fighting in [X] tiles>` conditional uses **tileFilter**. Valid values:
+
+**Safe keyword constants** (pass standalone validation):
+`Friendly Land`, `Enemy Land`, `Foreign Land`, `Land`, `Water`, `Coastal`, `River`, `Open terrain`, `Rough terrain`, `Fresh Water`, `Impassable`
+
+**Base-game terrain names** (work at runtime but trigger standalone warnings — suppressed by ModOptions.json):
+`Hill`, `Forest`, `Jungle`, `Marsh`, `Plains`, `Grassland`, `Desert`, `Tundra`, `Snow`, `Coast`, `Ocean`
+
+**Preferred**: Use keyword constants when the game logic is equivalent:
+- `Rough terrain` instead of `Hill` (if ALL rough terrains are acceptable — covers Hill, Forest, Jungle, Marsh)
+- `Friendly Land` / `Enemy Land` instead of specific terrains (for territory-based bonuses)
+- Use specific terrain names only when gameplay design requires exactly that terrain
 
 ### Balance Rules
 - Strength: same or +1-3 over the base unit

@@ -16,6 +16,7 @@ Use `read_file` to read ALL of these files in a single parallel batch:
 - `jsons/Units.json`
 - `jsons/Personalities.json`
 - `jsons/TileImprovements.json`
+- `jsons/ModOptions.json`
 
 Use `file_search` to find all image files:
 - `**/Images/NationIcons/*.png`
@@ -53,6 +54,35 @@ Verify all unique strings use valid Unciv syntax:
 - City filters in brackets: `[in all cities]`, `[in this city]`
 - Known valid uniques from the mod's existing entries (compare to established patterns)
 
+#### 3a. Filter Parameter Validation
+Check all filter parameters in unique strings against the Unciv filter system:
+
+**tileFilter** (used in `from [X] tiles`, `Must be next to [X]`, `<when fighting in [X] tiles>`):
+- Safe keyword constants (always valid): `unimproved`, `improved`, `worked`, `pillaged`, `All Road`, `Great Improvement`
+- terrainFilter keywords (always valid): `Terrain`, `Coastal`, `River`, `Open terrain`, `Rough terrain`, `Friendly Land`, `Foreign Land`, `Enemy Land`, `Featureless`, `Fresh Water`, `Fresh water`, `Impassable`, `Land`, `Water`
+- Base-game terrain names (valid at runtime, trigger standalone warnings): `Coast`, `Ocean`, `Lakes`, `Grassland`, `Plains`, `Desert`, `Tundra`, `Snow`, `Hill`, `Forest`, `Jungle`, `Marsh`, `Flood plains`, `Oasis`, `Atoll`, `Ice`, `Fallout`
+
+**buildingFilter** (used in `from every [X]`, `[X] buildings`):
+- Safe keyword constants (always valid): `Building`, `Buildings`, `Wonder`, `National Wonder`, `World Wonder`, `Culture`, `Gold`, `Science`, `Food`, `Production`, `Happiness`, `Faith`
+- Base-game building names (valid at runtime, trigger standalone warnings): `Courthouse`, `Harbor`, `Market`, `Library`, `Walls`, `Castle`, `Garden`, etc.
+- Mod-defined building names (always valid): any building in this mod's Buildings.json
+
+**Classification**:
+- If a filter parameter is a safe keyword constant → ✅ no issue
+- If a filter parameter is a base-game object name → ⚠️ valid but triggers standalone warning (suppressed by ModOptions.json)
+- If a filter parameter is not recognized as either → ❌ probable error (misspelling or wrong filter type)
+
+#### 3b. ModOptions.json Suppression Check
+Verify `jsons/ModOptions.json` contains:
+```json
+{
+  "uniques": [
+    "Suppress warning [*does not fit parameter type*]"
+  ]
+}
+```
+This suppresses the false-positive warnings that extension mods produce when referencing base-game objects by name.
+
 ### 4. Balance Check
 For each nation, verify:
 - Has exactly 1-2 nation uniques (not more, not zero)
@@ -88,6 +118,10 @@ Verify expected image files exist (or note which are missing):
 
 ## Uniques Syntax: ✅/❌
 [details of any invalid unique strings]
+
+## Filter Parameters: ✅/⚠️
+[list any base-game object references with ⚠️ (expected, suppressed by ModOptions.json)]
+[list any unrecognized filter values with ❌ (probable errors)]
 
 ## Balance: ✅/⚠️/❌
 [details of any balance concerns]

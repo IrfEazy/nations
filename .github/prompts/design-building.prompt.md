@@ -41,10 +41,23 @@ A civilization design brief containing the unique building concept (name, replac
 - `[+N]% Great Person generation [in this city]`
 - `Destroyed when the city is captured`
 - `Connects trade routes over water`
-- `Must be next to [Coast]`
+- `Must be next to [tileFilter]`
 - `[+N]% Production when constructing [filter] units [in this city]`
 - `[+N stat] from [tileFilter] tiles [in this city]`
 - `[+N stat] from every [specialist/buildingFilter]`
+
+#### Filter Values for Building Uniques
+
+**tileFilter** (used in `Must be next to [X]`, `from [X] tiles`):
+- Safe keyword constants: `Water`, `Land`, `Coastal`, `River`, `Fresh Water`, `Rough terrain`, `Open terrain`
+- Base-game terrain names (work at runtime, trigger standalone warnings — suppressed by ModOptions.json): `Coast`, `Hill`, `Forest`, `Plains`, `Grassland`, etc.
+
+**buildingFilter** (used in `from every [X]`, stat-related building categories):
+- Safe keyword constants: `Building`, `Buildings`, `Wonder`, `National Wonder`, `World Wonder`, `Culture`, `Gold`, `Science`, `Food`, `Production`, `Happiness`, `Faith`
+- Base-game building names (work at runtime, trigger standalone warnings): `Courthouse`, `Harbor`, `Market`, `Library`, `Walls`, `Castle`, `Garden`, etc.
+- Mod-defined building names always pass validation
+
+**Preferred**: Use stat keywords (e.g., `[Culture]` for all Culture buildings) when possible. Use specific building names only when gameplay requires targeting exactly that building.
 
 ### Balance Rules
 - Cost: same or +0-15% over the base building
