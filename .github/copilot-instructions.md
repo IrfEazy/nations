@@ -9,15 +9,15 @@ Repository: `IrfEazy/yaum` — GitHub topic: `unciv-mod`
 
 ## Current Nations in This Mod
 
-| Nation             | Leader                   | Victory    | Unique Name                | Key Uniques                                                         |
-| ------------------ | ------------------------ | ---------- | -------------------------- | ------------------------------------------------------------------- |
-| Sumer              | Gilgamesh                | Scientific | Epic Quests                | Gold from barbarian kills, barbarian camp notifications             |
-| League of Lezhë    | Skanderbeg               | Domination | League of Lezhë            | +20% strength in friendly land, double Great General bonus          |
-| Florence           | Lorenzo de' Medici       | Cultural   | Magnificence               | +25% Great Person generation, +1 Gold from specialists              |
-| Kingdom of Naples  | Charles III              | Cultural   | Enlightenment of the South | +20% culture building production, +1 culture from culture buildings |
-| Republic of Venice | Enrico Dandolo           | Diplomatic | Serenissima                | +2 Gold from coast tiles, -25% purchase cost                        |
-| Ottoman Empire     | Suleiman the Magnificent | Domination | Kanuni                     | +1 Happiness from Courthouses, -20% unit maintenance                |
-| Crown of Castile   | Isabella I               | Domination | Reconquista                | +20% strength in enemy land, +1 Faith in all cities                 |
+| Nation              | Leader                   | Victory    | Unique Name                | Key Uniques                                                         |
+| ------------------- | ------------------------ | ---------- | -------------------------- | ------------------------------------------------------------------- |
+| Sumer               | Gilgamesh                | Scientific | Epic Quests                | Gold from barbarian kills, barbarian camp notifications             |
+| League of Lezhë     | Skanderbeg               | Domination | League of Lezhë            | +20% strength in friendly land, double Great General bonus          |
+| Florence            | Lorenzo de' Medici       | Cultural   | Magnificence               | +25% Great Person generation, +1 Gold from specialists              |
+| Kingdom of Naples   | Charles III              | Cultural   | Enlightenment of the South | +20% culture building production, +1 culture from culture buildings |
+| Republic of Venice  | Enrico Dandolo           | Diplomatic | Serenissima                | +2 Gold from coast tiles, -25% purchase cost                        |
+| Ottoman Empire      | Suleiman the Magnificent | Domination | Kanuni                     | +1 Happiness from Courthouses, -20% unit maintenance                |
+| Crown of Castile    | Isabella I               | Domination | Reconquista                | +20% strength in enemy land, +1 Faith in all cities                 |
 | Kingdom of Portugal | Manuel I                 | Diplomatic | Age of Discovery           | +1 Science from coast tiles, +2 Gold from Harbors                   |
 
 ## Mod File Structure
@@ -29,7 +29,8 @@ yaum/
 │   ├── Buildings.json        # Unique buildings (replaces base buildings)
 │   ├── Units.json            # Unique units (replaces base units)
 │   ├── Personalities.json    # AI personality for each leader
-│   └── TileImprovements.json # Unique tile improvements
+│   ├── TileImprovements.json # Unique tile improvements
+│   └── ModOptions.json       # Mod metadata and warning suppressions
 ├── Images/
 │   ├── NationIcons/          # 100x100px, white on transparent
 │   ├── UnitIcons/            # 200x200px, white on transparent
@@ -142,6 +143,48 @@ yaum/
 }
 ```
 
+## Filter Parameter Types (Unciv Validation)
+
+Extension mods are validated **standalone** before merging with the base game. References to base-game object names (terrains like "Hill"/"Coast", buildings like "Courthouse"/"Harbor") produce `PossibleFilteringUnique` warnings because the validator can't find them in the mod-only ruleset. These warnings are **false positives** — the uniques work correctly at runtime.
+
+**Suppression**: `jsons/ModOptions.json` contains `Suppress warning [*does not fit parameter type*]` to silence these.
+
+### tileFilter
+Checked via: static keywords → improvementFilter → terrainFilter → civFilter
+
+**Safe keyword constants** (always pass validation):
+`unimproved`, `improved`, `worked`, `pillaged`, `All Road`, `Great Improvement`
+
+Plus all terrainFilter and improvementFilter values below.
+
+### terrainFilter
+**Safe keyword constants** (always pass standalone validation):
+`Terrain`, `Coastal`, `River`, `Open terrain`, `Rough terrain`, `Friendly Land`, `Foreign Land`, `Enemy Land`, `Featureless`, `Fresh Water`, `Fresh water`, `Impassable`, `Land`, `Water`
+
+**Base-game terrain names** (valid but trigger standalone warnings):
+`Coast`, `Ocean`, `Lakes`, `Grassland`, `Plains`, `Desert`, `Tundra`, `Snow`, `Hill`, `Forest`, `Jungle`, `Marsh`, `Flood plains`, `Oasis`, `Atoll`, `Ice`, `Fallout`
+
+### buildingFilter
+**Safe keyword constants** (always pass standalone validation):
+`Building`, `Buildings`, `Wonder`, `National Wonder`, `World Wonder`, `Culture`, `Gold`, `Science`, `Food`, `Production`, `Happiness`, `Faith`
+
+**Base-game building names** (valid but trigger standalone warnings):
+Any building name from the base game (e.g. `Courthouse`, `Harbor`, `Market`, `Library`, `Walls`, `Castle`, `Garden`).
+
+### When to Use Which
+| Want to reference…                           | Use               | Warning? |
+| -------------------------------------------- | ----------------- | -------- |
+| All Culture buildings                        | `[Culture]`       | No       |
+| A specific building by name                  | `[Courthouse]`    | Yes*     |
+| All water terrain                            | `[Water]`         | No       |
+| Specifically Coast tiles                     | `[Coast]`         | Yes*     |
+| All rough terrain (Hill+Forest+Jungle+Marsh) | `[Rough terrain]` | No       |
+| Specifically Hill tiles                      | `[Hill]`          | Yes*     |
+| Friendly territory                           | `[Friendly Land]` | No       |
+| Enemy territory                              | `[Enemy Land]`    | No       |
+
+\* Suppressed by ModOptions.json — works correctly at runtime.
+
 ## Common Uniques Reference
 
 ### Nation Uniques (Global)
@@ -156,13 +199,14 @@ yaum/
 - `Notified of new Barbarian encampments`
 - `[Gold] cost of purchasing items in cities [-N]%`
 - `[+N stat] from [tileFilter] tiles [in all cities]`
+- `[+N]% Production when constructing [buildingFilter] buildings [in all cities]`
 
 ### Unit Uniques
 - `Can move after attacking`
 - `No defensive terrain bonus`
 - `[+N]% Strength <when defending>`
 - `[+N]% Strength <vs cities>`
-- `[+N]% Strength <when fighting in [terrain] tiles>`
+- `[+N]% Strength <when fighting in [tileFilter] tiles>`
 - `Heals [N] damage if it kills a unit`
 - `Withdraws before melee combat <with [N]% chance>`
 - `[-N] Range`
@@ -172,7 +216,7 @@ yaum/
 - `[+N]% Great Person generation [in this city]`
 - `Destroyed when the city is captured`
 - `Connects trade routes over water`
-- `Must be next to [Coast]`
+- `Must be next to [tileFilter]`
 - `[+N]% Production when constructing [filter] units [in this city]`
 - `[+N stat] from [tileFilter] tiles [in this city]`
 
@@ -181,7 +225,7 @@ yaum/
 - `Pillaging this improvement yields approximately [+N Gold]`
 
 ### Conditional Modifiers
-- `<when fighting in [terrainFilter] tiles>`
+- `<when fighting in [tileFilter] tiles>`
 - `<when defending>`
 - `<vs cities>`
 - `<with [N]% chance>`
