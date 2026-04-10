@@ -108,10 +108,11 @@ For each commit in the plan, use `run_in_terminal` to run:
 git add "file1" "file2" "file3"
 ```
 
-Then:
+Then write the commit message to a temp file and commit with `-F` to preserve unicode emojis:
 ```
-git commit -m "<emoji> (scope): message"
+printf '%s' '<emoji> (scope): message' > .git/COMMIT_MSG && git commit -F .git/COMMIT_MSG && rm .git/COMMIT_MSG
 ```
+**Never use `git commit -m`** — emojis get corrupted on Windows.
 
 Repeat for each commit in the plan.
 

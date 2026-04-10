@@ -171,7 +171,11 @@ Print the numbered commit plan with files per commit. Then **ask the user to con
 Only after the user approves. For each commit in the plan:
 
 1. Use `run_in_terminal`: `git add "file1" "file2"`
-2. Use `run_in_terminal`: `git commit -m "<emoji> (scope): message"`
+2. Write the commit message to a temp file and commit with `-F` to preserve unicode emojis:
+   ```
+   printf '%s' '<emoji> (scope): message' > .git/COMMIT_MSG && git commit -F .git/COMMIT_MSG && rm .git/COMMIT_MSG
+   ```
+   **Never use `git commit -m`** — emojis get corrupted on Windows. Always use the temp file approach above.
 3. Move to the next commit.
 
 After all commits, run `git log --oneline -N` (where N = number of commits) and show the result.
