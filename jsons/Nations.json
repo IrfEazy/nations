@@ -1,6 +1,8 @@
 [
   {
-    "adjective": ["Sumerian"],
+    "adjective": [
+      "Sumerian"
+    ],
     "attacked": "You dare attack the King of Heroes?",
     "cities": [
       "Uruk",
@@ -34,12 +36,20 @@
     "defeated": "Immortality... escapes me...",
     "favoredReligion": "Tengriism",
     "hateHello": "Begone.",
-    "innerColor": [255, 215, 0],
+    "innerColor": [
+      255,
+      215,
+      0
+    ],
     "introduction": "I am Gilgamesh, King of Uruk. What brings you to my lands?",
     "leaderName": "Gilgamesh",
     "name": "Sumer",
     "neutralHello": "Greetings.",
-    "outerColor": [50, 20, 100],
+    "outerColor": [
+      50,
+      20,
+      100
+    ],
     "personality": "Gilgamesh",
     "preferredVictoryType": "Scientific",
     "spyNames": [
@@ -54,7 +64,10 @@
       "Dumuzid",
       "Inanna"
     ],
-    "startBias": ["Plains", "River"],
+    "startBias": [
+      "Plains",
+      "River"
+    ],
     "startIntroPart1": "Hail, King Gilgamesh of Uruk! Two-thirds god and one-third man, you are the mighty builder of walls and the seeker of immortality. The Sumerian people, the first to gift the world with writing, law, and irrigation, look to you for protection against the floods and the barbarians.",
     "startIntroPart2": "Great King, will you lead your people to glory once more? Will your epic deeds be remembered forever? Will your new empire shine through the ages of history?",
     "tradeRequest": "A fair exchange.",
@@ -65,7 +78,9 @@
     ]
   },
   {
-    "adjective": ["Albanian"],
+    "adjective": [
+      "Albanian"
+    ],
     "attacked": "We shall fight to the last stone!",
     "cities": [
       "Krujë",
@@ -93,12 +108,20 @@
     "defeated": "My sword... rests...",
     "favoredReligion": "Christianity",
     "hateHello": "Leave my sight.",
-    "innerColor": [0, 0, 0],
+    "innerColor": [
+      0,
+      0,
+      0
+    ],
     "introduction": "I am Skanderbeg. Do you come as friend or foe?",
     "leaderName": "Skanderbeg",
     "name": "League of Lezhë",
     "neutralHello": "Greetings.",
-    "outerColor": [255, 0, 0],
+    "outerColor": [
+      255,
+      0,
+      0
+    ],
     "personality": "Skanderbeg",
     "preferredVictoryType": "Domination",
     "spyNames": [
@@ -113,7 +136,9 @@
       "Tanush",
       "Zaharia"
     ],
-    "startBias": ["Hill"],
+    "startBias": [
+      "Hill"
+    ],
     "startIntroPart1": "Gjergj Kastrioti Skanderbeg, Dragon of Albania! You stood as the shield of Christendom against the Ottoman tide for twenty-five years. From your fortress in Krujë, you united the Albanian princes under the League of Lezhë and defied an empire.",
     "startIntroPart2": "Lord Skanderbeg, the eagle calls for you again. Will you raise your banner and defend your people? Will your mountains echo with the songs of freedom once more?",
     "tradeRequest": "This benefits us both.",
@@ -124,7 +149,9 @@
     ]
   },
   {
-    "adjective": ["Florentine"],
+    "adjective": [
+      "Florentine"
+    ],
     "attacked": "To arms, citizens! Defend the Republic!",
     "cities": [
       "Florence",
@@ -152,12 +179,20 @@
     "defeated": "The light... fades...",
     "favoredReligion": "Christianity",
     "hateHello": "Your presence is unwanted.",
-    "innerColor": [255, 255, 255],
+    "innerColor": [
+      255,
+      255,
+      255
+    ],
     "introduction": "Welcome to Florence. May you find inspiration in our fair city.",
     "leaderName": "Lorenzo de' Medici",
     "name": "Florence",
     "neutralHello": "Greetings, traveler.",
-    "outerColor": [108, 48, 130],
+    "outerColor": [
+      108,
+      48,
+      130
+    ],
     "personality": "Lorenzo de' Medici",
     "preferredVictoryType": "Cultural",
     "spyNames": [
@@ -172,7 +207,10 @@
       "Da Vinci",
       "Brunelleschi"
     ],
-    "startBias": ["Hill", "Grassland"],
+    "startBias": [
+      "Hill",
+      "Grassland"
+    ],
     "startIntroPart1": "Lorenzo Il Magnifico! Banker, diplomat, politician, and patron of scholars, artists, and poets. Under your stewardship, Florence has become the jewel of the Renaissance, a beacon of art and culture that shines across Europe.",
     "startIntroPart2": "The glory of Florence is in your hands, Magnifico. Will you continue to foster the arts and fill your city with wonders, or will the machinations of your rivals bring about your downfall?",
     "tradeRequest": "A proposal for your consideration.",
@@ -183,7 +221,9 @@
     ]
   },
   {
-    "adjective": ["Neapolitan"],
+    "adjective": [
+      "Neapolitan"
+    ],
     "attacked": "You threaten the jewel of the Mediterranean!",
     "cities": [
       "Naples",
@@ -211,12 +251,20 @@
     "defeated": "The sun sets on Naples...",
     "favoredReligion": "Christianity",
     "hateHello": "Begone.",
-    "innerColor": [178, 34, 34],
+    "innerColor": [
+      178,
+      34,
+      34
+    ],
     "introduction": "I am Charles III, King of Naples and Sicily. Welcome to our resplendent court.",
     "leaderName": "Charles III",
     "name": "Kingdom of Naples",
     "neutralHello": "Greetings.",
-    "outerColor": [255, 215, 0],
+    "outerColor": [
+      255,
+      215,
+      0
+    ],
     "personality": "Charles III",
     "preferredVictoryType": "Cultural",
     "spyNames": [
@@ -231,7 +279,9 @@
       "Sofia",
       "Giuseppe"
     ],
-    "startBias": ["Coast"],
+    "startBias": [
+      "Coast"
+    ],
     "startIntroPart1": "Great King Charles III, enlightened monarch of the Kingdom of Naples! You revitalized your realm, initiating a golden age of construction and cultural prestige. From the majestic Palace of Caserta to the grand Teatro di San Carlo, your legacy is written in stone and song.",
     "startIntroPart2": "The people look to you to guide them to grandeur once more. Will your kingdom become a beacon of culture and power in the Mediterranean? Will your new empire shine through the ages of history?",
     "tradeRequest": "A mutually beneficial arrangement.",
@@ -242,7 +292,9 @@
     ]
   },
   {
-    "adjective": ["Venetian"],
+    "adjective": [
+      "Venetian"
+    ],
     "attacked": "You dare attack the Serene Republic?",
     "cities": [
       "Venice",
@@ -270,12 +322,20 @@
     "defeated": "The waters rise... Venice falls...",
     "favoredReligion": "Christianity",
     "hateHello": "Make it quick.",
-    "innerColor": [255, 215, 0],
+    "innerColor": [
+      255,
+      215,
+      0
+    ],
     "introduction": "I am Enrico Dandolo, Doge of Venice. Our ships sail every sea, and our gold builds empires. Do you seek profit or war?",
     "leaderName": "Enrico Dandolo",
     "name": "Republic of Venice",
     "neutralHello": "Greetings, merchant.",
-    "outerColor": [139, 0, 0],
+    "outerColor": [
+      139,
+      0,
+      0
+    ],
     "personality": "Enrico Dandolo",
     "preferredVictoryType": "Diplomatic",
     "spyNames": [
@@ -290,7 +350,9 @@
       "Palladio",
       "Bellini"
     ],
-    "startBias": ["Coast"],
+    "startBias": [
+      "Coast"
+    ],
     "startIntroPart1": "Doge Enrico Dandolo, blind visionary of the Serene Republic! Under your guidance, Venice has become the mistress of the Mediterranean, diverting crusades and toppling empires to secure its trade dominance.",
     "startIntroPart2": "The Arsenal works day and night to equip your fleets. Will you navigate the treacherous currents of diplomacy and commerce to make Venice the wealthiest nation on earth?",
     "tradeRequest": "A contract for your signature.",
@@ -301,7 +363,9 @@
     ]
   },
   {
-    "adjective": ["Ottoman"],
+    "adjective": [
+      "Ottoman"
+    ],
     "attacked": "You dare disturb the Pax Ottomana?",
     "cities": [
       "Istanbul",
@@ -329,12 +393,20 @@
     "defeated": "The Empire... fractures...",
     "favoredReligion": "Islam",
     "hateHello": "Speak quickly.",
-    "innerColor": [255, 215, 0],
+    "innerColor": [
+      255,
+      215,
+      0
+    ],
     "introduction": "I am Suleiman, the Lawgiver, Sultan of Sultans. My realm bridges East and West. Do you come to admire our justice or taste our steel?",
     "leaderName": "Suleiman the Magnificent",
     "name": "Ottoman Empire",
     "neutralHello": "Greetings.",
-    "outerColor": [139, 0, 0],
+    "outerColor": [
+      139,
+      0,
+      0
+    ],
     "personality": "Suleiman the Magnificent",
     "preferredVictoryType": "Domination",
     "spyNames": [
@@ -349,7 +421,9 @@
       "Ebussuud",
       "Matrakci"
     ],
-    "startBias": ["Plains"],
+    "startBias": [
+      "Plains"
+    ],
     "startIntroPart1": "Sultan Suleiman, the Magnificent, the Lawgiver! Under your just rule, the Ottoman Empire has reached its zenith, controlling the gateway between Europe and Asia. Your legal codes protect the subjects, and your armies are the envy of the world.",
     "startIntroPart2": "The Janissaries await your command, and the people thrive in your bathhouses. Will you expand the House of Osman to rule the entire world?",
     "tradeRequest": "A fair proposal, consistent with our laws.",
@@ -360,7 +434,9 @@
     ]
   },
   {
-    "adjective": ["Castilian"],
+    "adjective": [
+      "Castilian"
+    ],
     "attacked": "You dare challenge the Kingdom founded by God?",
     "cities": [
       "Toledo",
@@ -388,12 +464,20 @@
     "defeated": "The body may fall, but the soul remains...",
     "favoredReligion": "Christianity",
     "hateHello": "Make it brief.",
-    "innerColor": [255, 215, 0],
+    "innerColor": [
+      255,
+      215,
+      0
+    ],
     "introduction": "I am Isabella, Queen of Castile and León. We strive to unify the lands and the faith. Do you walk with God?",
     "leaderName": "Isabella I",
     "name": "Crown of Castile",
     "neutralHello": "God be with you.",
-    "outerColor": [139, 0, 0],
+    "outerColor": [
+      139,
+      0,
+      0
+    ],
     "personality": "Isabella I",
     "preferredVictoryType": "Domination",
     "spyNames": [
@@ -408,7 +492,9 @@
       "Ponce",
       "Alba"
     ],
-    "startBias": ["Plains"],
+    "startBias": [
+      "Plains"
+    ],
     "startIntroPart1": "Isabella, Queen of Castile, your piety and resolve have united a fractured land. Through marriage and conquest, you have laid the foundation for a global empire.",
     "startIntroPart2": "The Reconquista is complete, but the world is vast. Will you carry the banner of Castile to the ends of the earth? Will your new empire shine through the ages of history?",
     "tradeRequest": "A mutually beneficial arrangement, supervised by grace.",
@@ -416,6 +502,77 @@
     "uniques": [
       "[+20]% Strength <when fighting in [Enemy Land] tiles>",
       "[+1 Faith] [in all cities]"
+    ]
+  },
+  {
+    "adjective": [
+      "Portuguese"
+    ],
+    "attacked": "You dare strike at the lord of the seas? The Portuguese Empire has weathered greater storms than you. You will regret this folly.",
+    "cities": [
+      "Lisbon",
+      "Porto",
+      "Coimbra",
+      "Évora",
+      "Braga",
+      "Funchal",
+      "Faro",
+      "Leiria",
+      "Viseu",
+      "Guimarães",
+      "Beja",
+      "Santarém",
+      "Setúbal",
+      "Aveiro",
+      "Tavira",
+      "Tomar",
+      "Elvas",
+      "Lamego",
+      "Silves",
+      "Lagos"
+    ],
+    "declaringWar": "You have refused the hand of friendship and obstructed the trade routes ordained by God. My admirals shall teach you the cost of defying Portugal.",
+    "defeated": "Fortune, it seems, has abandoned me at last. The spice routes grow cold, and the caravels return no more. Perhaps another age will remember what we built.",
+    "favoredReligion": "Catholicism",
+    "hateHello": "You again.",
+    "innerColor": [
+      255,
+      255,
+      255
+    ],
+    "introduction": "I am Manuel, by the grace of God King of Portugal and Lord of Commerce across the seas. My ships sail every ocean — perhaps your lands have something worth trading?",
+    "leaderName": "Manuel I",
+    "name": "Kingdom of Portugal",
+    "neutralHello": "Good winds.",
+    "outerColor": [
+      0,
+      51,
+      153
+    ],
+    "personality": "Manuel I",
+    "preferredVictoryType": "Diplomatic",
+    "spyNames": [
+      "Vasco da Gama",
+      "Pedro Álvares Cabral",
+      "Fernão de Magalhães",
+      "Afonso de Albuquerque",
+      "Bartolomeu Dias",
+      "Luís de Camões",
+      "Francisco de Almeida",
+      "Duarte Pacheco Pereira",
+      "Gil Eanes",
+      "Nuno Álvares Pereira"
+    ],
+    "startBias": [
+      "Coast"
+    ],
+    "startIntroPart1": "Hail, Manuel the Fortunate, King of Portugal and the Algarves, Lord of Guinea and of the Conquest, Navigation, and Commerce of Ethiopia, Arabia, Persia, and India! Under your reign, Portuguese caravels reached the shores of India and Brazil, claiming dominion over the spice routes that made your kingdom the wealthiest in Europe. Your patronage of navigation, the Manueline architectural marvels, and the establishment of a global trade empire forever changed the course of history.",
+    "startIntroPart2": "Will you once again send your ships to chart unknown waters and build a commercial empire that spans the globe? Will you harness the wealth of distant lands to raise monuments that will endure for centuries? The winds of fortune await your command, O Venturoso!",
+    "tradeRequest": "The Casa da Índia has rare goods from the four corners of the earth. Shall we discuss terms that benefit us both?",
+    "uniqueName": "Age of Discovery",
+    "uniques": [
+      "[+1 Science] from [Coast] tiles [in all cities]",
+      "[+2 Gold] from every [Harbor]"
     ]
   }
 ]

@@ -236,5 +236,39 @@
     },
     "production": 5,
     "science": 4
+  },
+  {
+    "aggressive": 3,
+    "civilopediaText": [
+      {
+        "text": "Manuel I, known as 'The Fortunate,' reigned over Portugal during the height of the Age of Discovery, overseeing Vasco da Gama's voyage to India and the colonization of Brazil."
+      }
+    ],
+    "commerce": 9,
+    "culture": 7,
+    "declareWar": 3,
+    "diplomacy": 7,
+    "expansion": 9,
+    "faith": 7,
+    "food": 5,
+    "gold": 9,
+    "happiness": 6,
+    "loyal": 6,
+    "military": 5,
+    "name": "Manuel I",
+    "priorities": {
+      "Autocracy": 3,
+      "Commerce": 9,
+      "Freedom": 4,
+      "Honor": 3,
+      "Liberty": 4,
+      "Order": 5,
+      "Patronage": 7,
+      "Piety": 6,
+      "Rationalism": 6,
+      "Tradition": 6
+    },
+    "production": 6,
+    "science": 7
   }
 ]

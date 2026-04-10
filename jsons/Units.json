@@ -8,7 +8,10 @@
     "replaces": "Chariot Archer",
     "requiredTech": "The Wheel",
     "strength": 10,
-    "uniques": ["Can move after attacking", "No defensive terrain bonus"],
+    "uniques": [
+      "Can move after attacking",
+      "No defensive terrain bonus"
+    ],
     "uniqueTo": "Sumer",
     "unitType": "Mounted",
     "upgradesTo": "Knight"
@@ -19,7 +22,9 @@
     "movement": 5,
     "name": "Stradiot",
     "obsoleteTech": "Combined Arms",
-    "promotions": ["Formation I"],
+    "promotions": [
+      "Formation I"
+    ],
     "replaces": "Lancer",
     "requiredTech": "Metallurgy",
     "strength": 25,
@@ -61,7 +66,9 @@
     "requiredResource": "Iron",
     "requiredTech": "Navigation",
     "strength": 25,
-    "uniques": ["[+15]% Strength <when defending>"],
+    "uniques": [
+      "[+15]% Strength <when defending>"
+    ],
     "uniqueTo": "Kingdom of Naples",
     "unitType": "Ranged Water",
     "upgradesTo": "Battleship"
@@ -78,7 +85,10 @@
     "requiredResource": "Iron",
     "requiredTech": "Navigation",
     "strength": 30,
-    "uniques": ["[+10]% Strength <when defending>", "[-1] Range"],
+    "uniques": [
+      "[+10]% Strength <when defending>",
+      "[-1] Range"
+    ],
     "uniqueTo": "Republic of Venice",
     "unitType": "Ranged Water",
     "upgradesTo": "Battleship"
@@ -118,5 +128,22 @@
     "uniqueTo": "Crown of Castile",
     "unitType": "Mounted",
     "upgradesTo": "Cavalry"
+  },
+  {
+    "attackSound": "shipCannonVolley",
+    "cost": 120,
+    "movement": 4,
+    "name": "Nau",
+    "obsoleteTech": "Steam Power",
+    "replaces": "Caravel",
+    "requiredTech": "Astronomy",
+    "strength": 22,
+    "uniques": [
+      "[+15]% Strength <when defending>",
+      "Can move after attacking"
+    ],
+    "uniqueTo": "Kingdom of Portugal",
+    "unitType": "Melee Water",
+    "upgradesTo": "Ironclad"
   }
 ]

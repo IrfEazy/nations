@@ -40,7 +40,9 @@
     "specialistSlots": {
       "Artist": 1
     },
-    "uniques": ["Destroyed when the city is captured"],
+    "uniques": [
+      "Destroyed when the city is captured"
+    ],
     "uniqueTo": "Kingdom of Naples"
   },
   {
@@ -64,7 +66,10 @@
     "name": "Hammam",
     "replaces": "Garden",
     "requiredTech": "Theology",
-    "uniques": ["[+25]% Great Person generation [in this city]", "[+1 Happiness]"],
+    "uniques": [
+      "[+25]% Great Person generation [in this city]",
+      "[+1 Happiness]"
+    ],
     "uniqueTo": "Ottoman Empire"
   },
   {
@@ -75,7 +80,22 @@
     "name": "Alcázar",
     "replaces": "Castle",
     "requiredTech": "Chivalry",
-    "uniques": ["[+2 Faith]", "[+2 Culture]"],
+    "uniques": [
+      "[+2 Faith]",
+      "[+2 Culture]"
+    ],
     "uniqueTo": "Crown of Castile"
+  },
+  {
+    "cost": 100,
+    "gold": 3,
+    "maintenance": 0,
+    "name": "Feitoria",
+    "replaces": "Market",
+    "requiredTech": "Currency",
+    "uniques": [
+      "[+1 Science]"
+    ],
+    "uniqueTo": "Kingdom of Portugal"
   }
 ]
