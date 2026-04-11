@@ -123,7 +123,7 @@
     "uniques": [
       "[+33]% Strength <vs cities>",
       "Can move after attacking",
-      "[+15]% Strength <when fighting in [Hill] tiles>"
+      "[+15]% Strength <when fighting in [Rough terrain] tiles>"
     ],
     "uniqueTo": "Crown of Castile",
     "unitType": "Mounted",

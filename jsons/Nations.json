@@ -358,7 +358,7 @@
     "tradeRequest": "A contract for your signature.",
     "uniqueName": "Serenissima",
     "uniques": [
-      "[+2 Gold] from [Coast] tiles [in all cities]",
+      "[+2 Gold] from [Water] tiles [in all cities]",
       "[Gold] cost of purchasing items in cities [-25]%"
     ]
   },
@@ -429,7 +429,7 @@
     "tradeRequest": "A fair proposal, consistent with our laws.",
     "uniqueName": "Kanuni",
     "uniques": [
-      "[+1 Happiness] from every [Courthouse]",
+      "[+1 Happiness] [in all cities]",
       "[-20]% maintenance costs <for [All] units>"
     ]
   },
@@ -571,8 +571,8 @@
     "tradeRequest": "The Casa da Índia has rare goods from the four corners of the earth. Shall we discuss terms that benefit us both?",
     "uniqueName": "Age of Discovery",
     "uniques": [
-      "[+1 Science] from [Coast] tiles [in all cities]",
-      "[+2 Gold] from every [Harbor]"
+      "[+1 Science] from [Water] tiles [in all cities]",
+      "[+1 Gold] from [Water] tiles [in all cities]"
     ]
   }
 ]

@@ -1,5 +1,3 @@
 {
-  "uniques": [
-    "Suppress warning [*does not fit parameter type*]"
-  ]
+  "uniques": []
 }
