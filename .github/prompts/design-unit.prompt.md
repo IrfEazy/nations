@@ -57,7 +57,10 @@ The `<when fighting in [X] tiles>` conditional uses **tileFilter**. Valid values
 **Preferred**: Use keyword constants when the game logic is equivalent:
 - `Rough terrain` instead of `Hill` (if ALL rough terrains are acceptable — covers Hill, Forest, Jungle, Marsh)
 - `Friendly Land` / `Enemy Land` instead of specific terrains (for territory-based bonuses)
-- Use specific terrain names only when gameplay design requires exactly that terrain
+- `Water` instead of `Coast` (covers Coast, Ocean, Lakes)
+- `Open terrain` instead of `Plains`/`Grassland`
+
+**MANDATORY**: NEVER use base-game terrain names (`Hill`, `Coast`, `Forest`, etc.) in uniques. Always use a safe keyword constant instead. If no keyword matches the exact intent, broaden the gameplay effect to use the keyword — the tradeoff is worth eliminating warnings. See the Safe Keyword Substitution Table in copilot-instructions.md.
 
 ### Balance Rules
 - Strength: same or +1-3 over the base unit

@@ -69,19 +69,12 @@ Check all filter parameters in unique strings against the Unciv filter system:
 
 **Classification**:
 - If a filter parameter is a safe keyword constant → ✅ no issue
-- If a filter parameter is a base-game object name → ⚠️ valid but triggers standalone warning (suppressed by ModOptions.json)
+- If a filter parameter is a base-game terrain name → ❌ **must replace with safe keyword** (e.g., `Hill` → `Rough terrain`, `Coast` → `Water`)
+- If a filter parameter is a base-game building name → ❌ **must redesign the unique** to use a stat keyword or different bonus
 - If a filter parameter is not recognized as either → ❌ probable error (misspelling or wrong filter type)
 
-#### 3b. ModOptions.json Suppression Check
-Verify `jsons/ModOptions.json` contains:
-```json
-{
-  "uniques": [
-    "Suppress warning [*does not fit parameter type*]"
-  ]
-}
-```
-This suppresses the false-positive warnings that extension mods produce when referencing base-game objects by name.
+#### 3b. ModOptions.json Check
+Verify `jsons/ModOptions.json` exists and is valid JSON. It should NOT contain any `Suppress warning` uniques — warnings should be eliminated at the source by using safe keyword constants.
 
 ### 4. Balance Check
 For each nation, verify:
@@ -119,8 +112,9 @@ Verify expected image files exist (or note which are missing):
 ## Uniques Syntax: ✅/❌
 [details of any invalid unique strings]
 
-## Filter Parameters: ✅/⚠️
-[list any base-game object references with ⚠️ (expected, suppressed by ModOptions.json)]
+## Filter Parameters: ✅/❌
+[list any base-game object references WITH inline suppression → ✅ properly handled]
+[list any base-game object references WITHOUT inline suppression → ❌ must add <Suppress warning [does not fit parameter type]>]
 [list any unrecognized filter values with ❌ (probable errors)]
 
 ## Balance: ✅/⚠️/❌

@@ -57,7 +57,14 @@ A civilization design brief containing the unique building concept (name, replac
 - Base-game building names (work at runtime, trigger standalone warnings): `Courthouse`, `Harbor`, `Market`, `Library`, `Walls`, `Castle`, `Garden`, etc.
 - Mod-defined building names always pass validation
 
-**Preferred**: Use stat keywords (e.g., `[Culture]` for all Culture buildings) when possible. Use specific building names only when gameplay requires targeting exactly that building.
+**Preferred**: Use stat keywords (e.g., `[Culture]` for all Culture buildings) when possible. Use `[Water]` instead of `[Coast]`, `[Rough terrain]` instead of `[Hill]`.
+
+**MANDATORY**: NEVER reference base-game terrain names (`Coast`, `Hill`, etc.) or base-game building names (`Courthouse`, `Harbor`, etc.) in uniques. Always use safe keyword constants instead:
+- For terrains: `[Water]`, `[Rough terrain]`, `[Open terrain]`, `[Friendly Land]`, etc.
+- For buildings: `[Culture]`, `[Gold]`, `[Happiness]`, `[Production]`, `[Science]`, `[Faith]`, `[Building]`, `[Wonder]`
+- If you need to target a specific base-game building, redesign the unique to use a stat keyword or a different bonus entirely.
+
+See the Safe Keyword Substitution Table in copilot-instructions.md.
 
 ### Balance Rules
 - Cost: same or +0-15% over the base building
