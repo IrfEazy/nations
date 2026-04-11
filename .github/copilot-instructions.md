@@ -15,10 +15,10 @@ Repository: `IrfEazy/yaum` — GitHub topic: `unciv-mod`
 | League of Lezhë     | Skanderbeg               | Domination | League of Lezhë            | +20% strength in friendly land, double Great General bonus          |
 | Florence            | Lorenzo de' Medici       | Cultural   | Magnificence               | +25% Great Person generation, +1 Gold from specialists              |
 | Kingdom of Naples   | Charles III              | Cultural   | Enlightenment of the South | +20% culture building production, +1 culture from culture buildings |
-| Republic of Venice  | Enrico Dandolo           | Diplomatic | Serenissima                | +2 Gold from coast tiles, -25% purchase cost                        |
-| Ottoman Empire      | Suleiman the Magnificent | Domination | Kanuni                     | +1 Happiness from Courthouses, -20% unit maintenance                |
+| Republic of Venice  | Enrico Dandolo           | Diplomatic | Serenissima                | +2 Gold from water tiles, -25% purchase cost                        |
+| Ottoman Empire      | Suleiman the Magnificent | Domination | Kanuni                     | +1 Happiness in all cities, -20% unit maintenance                   |
 | Crown of Castile    | Isabella I               | Domination | Reconquista                | +20% strength in enemy land, +1 Faith in all cities                 |
-| Kingdom of Portugal | Manuel I                 | Diplomatic | Age of Discovery           | +1 Science from coast tiles, +2 Gold from Harbors                   |
+| Kingdom of Portugal | Manuel I                 | Diplomatic | Age of Discovery           | +1 Science from water tiles, +1 Gold from water tiles               |
 
 ## Mod File Structure
 
@@ -145,9 +145,20 @@ yaum/
 
 ## Filter Parameter Types (Unciv Validation)
 
-Extension mods are validated **standalone** before merging with the base game. References to base-game object names (terrains like "Hill"/"Coast", buildings like "Courthouse"/"Harbor") produce `PossibleFilteringUnique` warnings because the validator can't find them in the mod-only ruleset. These warnings are **false positives** — the uniques work correctly at runtime.
+Extension mods are validated **standalone** before merging with the base game. References to base-game object names (terrains like "Hill"/"Coast", buildings like "Courthouse"/"Harbor") produce `PossibleFilteringUnique` warnings because the validator can't find them in the mod-only ruleset. These warnings are **false positives** — the uniques work correctly at runtime, but they clutter the mod manager.
 
-**Suppression**: `jsons/ModOptions.json` contains `Suppress warning [*does not fit parameter type*]` to silence these.
+**MANDATORY RULE — safe keywords first**: Always use safe keyword constants instead of base-game object names. Only use a base-game name when no keyword constant covers the intended gameplay effect. If a base-game name is absolutely unavoidable, append `<Suppress warning [does not fit parameter type]>` to that unique string as a last resort.
+
+### Safe Keyword Substitution Table
+
+| Instead of (base-game name) | Use (safe keyword)   | Gameplay difference                                      |
+| --------------------------- | -------------------- | -------------------------------------------------------- |
+| `[Hill]`                    | `[Rough terrain]`    | Also includes Forest, Jungle, Marsh                      |
+| `[Coast]`                   | `[Water]`            | Also includes Ocean and Lakes                            |
+| `[Grassland]` / `[Plains]`  | `[Open terrain]`     | Covers all flat non-rough terrains                       |
+| `[Forest]` + `[Jungle]`     | `[Rough terrain]`    | Also includes Hill, Marsh                                |
+| `[Courthouse]`              | Redesign the unique   | No keyword targets a single building — use stat keywords like `[Happiness]` or redesign |
+| `[Harbor]`                  | Redesign the unique   | No keyword targets a single building — use `[Gold]` or redesign |
 
 ### tileFilter
 Checked via: static keywords → improvementFilter → terrainFilter → civFilter
@@ -161,29 +172,39 @@ Plus all terrainFilter and improvementFilter values below.
 **Safe keyword constants** (always pass standalone validation):
 `Terrain`, `Coastal`, `River`, `Open terrain`, `Rough terrain`, `Friendly Land`, `Foreign Land`, `Enemy Land`, `Featureless`, `Fresh Water`, `Fresh water`, `Impassable`, `Land`, `Water`
 
-**Base-game terrain names** (valid but trigger standalone warnings):
+**Base-game terrain names** (valid at runtime but trigger standalone warnings — AVOID, use safe keywords above):
 `Coast`, `Ocean`, `Lakes`, `Grassland`, `Plains`, `Desert`, `Tundra`, `Snow`, `Hill`, `Forest`, `Jungle`, `Marsh`, `Flood plains`, `Oasis`, `Atoll`, `Ice`, `Fallout`
 
 ### buildingFilter
 **Safe keyword constants** (always pass standalone validation):
 `Building`, `Buildings`, `Wonder`, `National Wonder`, `World Wonder`, `Culture`, `Gold`, `Science`, `Food`, `Production`, `Happiness`, `Faith`
 
-**Base-game building names** (valid but trigger standalone warnings):
+**Base-game building names** (valid at runtime but trigger standalone warnings — AVOID, redesign the unique):
 Any building name from the base game (e.g. `Courthouse`, `Harbor`, `Market`, `Library`, `Walls`, `Castle`, `Garden`).
 
 ### When to Use Which
 | Want to reference…                           | Use               | Warning? |
 | -------------------------------------------- | ----------------- | -------- |
 | All Culture buildings                        | `[Culture]`       | No       |
-| A specific building by name                  | `[Courthouse]`    | Yes*     |
+| All Happiness buildings                      | `[Happiness]`     | No       |
 | All water terrain                            | `[Water]`         | No       |
-| Specifically Coast tiles                     | `[Coast]`         | Yes*     |
 | All rough terrain (Hill+Forest+Jungle+Marsh) | `[Rough terrain]` | No       |
-| Specifically Hill tiles                      | `[Hill]`          | Yes*     |
+| All flat/open terrain                        | `[Open terrain]`  | No       |
 | Friendly territory                           | `[Friendly Land]` | No       |
 | Enemy territory                              | `[Enemy Land]`    | No       |
+| A specific base-game building (e.g. Courthouse) | **Redesign the unique** | N/A  |
+| A specific base-game terrain (e.g. Hill)     | **Use the broader keyword or redesign** | N/A  |
 
-\* Suppressed by ModOptions.json — works correctly at runtime.
+### Examples of Correct Unique Strings
+```
+// Safe keywords — preferred, no warnings:
+"[+20]% Strength <when fighting in [Friendly Land] tiles>"
+"[+1 Culture] from every [Culture]"
+"[+15]% Strength <when fighting in [Rough terrain] tiles>"
+"[+2 Gold] from [Water] tiles [in all cities]"
+"Must be next to [Water]"
+"[+1 Happiness] [in all cities]"
+```
 
 ## Common Uniques Reference
 
